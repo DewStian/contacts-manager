@@ -1,7 +1,10 @@
+import java.io.*;
 import java.util.*;
 import java.nio.file.*;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Option1 option1 = new Option1();
         Scanner sc = new Scanner(System.in);
         System.out.println("1. View contacts.\n" +
                 "2. Add a new contact.\n" +
@@ -12,22 +15,23 @@ public class Main {
         int userOption = sc.nextInt();
         String directory = "src";
         String filename = "contacts.txt";
-        Path dataDirectory = Paths.get(directory);
         Path dataFile = Paths.get(directory, filename);
-        try {
-            List<String> contents = Files.readAllLines(
-                    dataFile);
-            System.out.println(contents);
-        } catch (Exception e) {
-            System.out.println("Exception!");
-            e.printStackTrace();
+        List<Contact> contacts = new ArrayList<>();
+        List<String> contents = Files.readAllLines(
+                dataFile);
+        for (int i = 0; i < contents.size(); i++) {
+            String name = contents.get(i).substring(0, contents.get(i).indexOf("-"));
+            String number = contents.get(i).substring( contents.get(i).indexOf("-") + 1);
+            contacts.add(new Contact(name, number));
         }
-        switch(userOption){
-            case 1 :
-            case 2 :
-            case 3 :
-            case 4 :
-            default :
+        switch (userOption) {
+            case 1:
+                option1.printList(contacts);
+                break;
+            case 2:
+            case 3:
+            case 4:
+            default:
 
         }
 
