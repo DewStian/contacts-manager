@@ -5,6 +5,7 @@ import java.nio.file.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         Option1 option1 = new Option1();
+        Option2 option2 = new Option2();
         Scanner sc = new Scanner(System.in);
         System.out.println("1. View contacts.\n" +
                 "2. Add a new contact.\n" +
@@ -29,6 +30,9 @@ public class Main {
                 option1.printList(contacts);
                 break;
             case 2:
+                contacts = option2.addContact(contacts);
+                option1.printList(contacts);
+                break;
             case 3:
             case 4:
             default:
