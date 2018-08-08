@@ -4,9 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-class Option1 {
+class ViewContacts {
     void printList(List<Contact> list) {
-        System.out.println("Name | Phone Number");
+        System.out.println("\nName | Phone Number");
         System.out.println("-------------------");
         for (Contact item : list ) {
             System.out.println(item.getName() + " | " + item.getNumber());

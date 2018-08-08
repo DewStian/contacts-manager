@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.*;
 
-class Option3 {
+class SearchContacts {
     Contact searchThroughList(List<Contact> list) {
         Scanner sc = new Scanner(System.in);
         Contact contact = new Contact("Contact", "does not exist");
