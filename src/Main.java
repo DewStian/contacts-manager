@@ -54,6 +54,7 @@ public class Main {
                 exit = true;
                 break;
             default:
+                System.out.println("That isnt a valid entry, try again!");
 
         }
         } while (!exit);
