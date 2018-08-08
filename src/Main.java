@@ -47,6 +47,7 @@ public class Main {
                 break;
             case 4:
                 contacts = DeleteContacts.deleteContact(contacts);
+                viewContacts.printList(contacts);
                 break;
             case 5:
                 exit = true;
