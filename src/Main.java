@@ -11,7 +11,7 @@ public class Main {
         SearchContacts searchContacts = new SearchContacts();
         Scanner sc = new Scanner(System.in);
         List<Contact> contacts = new ArrayList<>();
-        List<String> contents = null;
+        List<String> contents;
         Boolean exit = false;
 
         Path dataFile = Paths.get("src", "contacts.txt");
@@ -20,6 +20,7 @@ public class Main {
                     dataFile);
         } catch (IOException e) {
             e.printStackTrace();
+            throw new Error();
         }
         for (String item : contents) {
             contacts.add(new Contact(item.substring(0, item.indexOf("-")), item.substring( item.indexOf("-") + 1)));
