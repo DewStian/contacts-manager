@@ -23,13 +23,14 @@ public class AddContact {
                         break;
                     }
                 }
+                newnewName = false;
             }
         }
         String newNumber = "";
         while(rightLength) {
             System.out.println("What is the number for the new contact?");
             newNumber = sc.nextLine();
-            if(newNumber.length() == 7 || newNumber.length() == 10){
+            if(newNumber.length() == 7 || newNumber.length() == 10 || newNumber.length() == 13){
                 rightLength = false;
             }else{
                 System.out.println("That is not a valid phone number. Try again!");
